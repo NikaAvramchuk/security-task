@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Add your CSS styles or link to external stylesheets here if needed -->
+</head>
+<body>
+<div>
+    <h2>Login</h2>
+    <div th:if="${error != null}" th:utext="${session[SPRING_SECURITY_LAST_EXCEPTION]}"> error </div>
+    <form th:action="@{/login}" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required/>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required/>
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
